@@ -8,7 +8,7 @@ extends RigidBody2D
 @export var initial_thrust := 50
 @export var const_thrust := 10
 @export var sideways_thrust := 1000.0
-@export var offset := 100
+# @export var offset := 100
 @export var spawn_dist := 500
 @export var angle_variance := 0.5 # Radians
 var torque := 100
@@ -32,7 +32,7 @@ func _integrate_forces(state):
 	state.apply_torque(rotation_direction * torque)
 	update_ui()
 
-#spawns player at edge randomly and aims them at the planet based on the offset
+# spawns player at edge randomly and aims them at the planet based on the offset
 func spawn_in():
 	trajectory.clear_points()
 	linear_velocity = Vector2(0,0)
@@ -41,6 +41,7 @@ func spawn_in():
 	position = CENTER + Vector2(cos(rand_angle), sin(rand_angle)) * spawn_dist
 	look_at(CENTER) # Point towards center
 	rotate(PI/2 + randf_range(-angle_variance, angle_variance)) # Fix offset and vary angle by +- angle_variance
+	print(transform.y * -initial_thrust)
 	apply_impulse(transform.y * -initial_thrust)
 	
 	#rotate(randf_range(-0.5, 0.5)) 

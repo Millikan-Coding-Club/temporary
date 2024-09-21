@@ -20,7 +20,7 @@ script = ExtResource("1_84trf")
 
 [node name="Player" parent="." instance=ExtResource("1_u7n24")]
 position = Vector2(399, 455)
-initial_thrust = 100
+initial_thrust = 25
 spawn_dist = 250
 
 [node name="Camera2D" type="Camera2D" parent="."]

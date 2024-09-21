@@ -1,0 +1,6 @@
+res://scenes/game.tscn
+res://scenes/player.tscn
+res://scripts/player.gd
+res://scripts/camera.gd
+res://scenes/planet.tscn
+res://scripts/MASTERSCRIPT.gd

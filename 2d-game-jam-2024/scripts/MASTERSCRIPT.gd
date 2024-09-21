@@ -6,6 +6,7 @@ func restart():
 	$UI/crashed.hide()
 	$UI/RestartButton.hide()
 	$Player.spawn_in()
+	$Camera2D.zoom = Vector2(1,1)
 
 func _on_restart_button_pressed():
 	restart()
